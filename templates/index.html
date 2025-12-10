@@ -3,7 +3,8 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width,initial-scale=1" />
-  <title>Peter Theuri </title>
+  <title>Peter.Theuri </title>
+  <link rel="icon" href="static/images/p.png" type="image/png">
   <meta name="description" content="Peter Theuri — ICT Tech, Full-Stack Developer & UI/UX Designer" />
   <link rel="icon" href="data:,">
   <!-- Google font (optional) -->
@@ -57,7 +58,7 @@
       --muted:rgba(76, 76, 76, 1);
       --accent-1:#0ea5e9; /* cyan-ish blue */
       --accent-2:#2563eb; /* blue */
-      --glass: rgba(115, 115, 115, 0.12);
+      --glass: rgba(253, 131, 131, 0.06);
       --card:#0f1724;
       --radius:14px;
       --max-w:1100px;
@@ -95,29 +96,58 @@
       gap:12px;
       align-items:center;
     }
-    .logo {
-      width:56px;
-      height:56px;
-      border-radius:12px;
-      background:rgba(0, 0, 0, 1);
-      display:inline-flex;
-      align-items:center;
-      justify-content:center;
-      font-weight:700;
-      color:rgb(255,255,255);
-      font-size:20px;
-      box-shadow: 0 6px 20px rgba(2,6,23,0.6);
-    }
-    nav a{
-      color:var(--muted);
-      text-decoration:none;
-      margin-left:14px;
-      font-weight:600;
-      font-size:14px;
-      padding:8px 10px;
-      border-radius:8px;
-    }
-    nav a:hover{ color:white; background: rgba(255,255,255,0.02) }
+  .logo {
+    width: 56px;
+    height: 56px;
+    border-radius: 12px;
+    background: rgba(0, 0, 0, 1);
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 6px 20px rgba(2,6,23,0.6);
+}
+
+.logo img {
+    width: 100%;
+    height: 100%;
+    border-radius: 12px;
+    object-fit: cover; /* keeps logo proportions */
+}
+
+  nav {
+  display: flex;
+  gap: 12px;
+}
+
+.nav-btn {
+  text-decoration: none;
+  font-weight: 600;
+  font-size: 14px;
+  padding: 10px 18px;
+  border-radius: 8px;
+  color: white;
+  transition: all 0.3s ease;
+  display: inline-block;
+  text-align: center;
+}
+
+/* Google-style colors */
+.nav-btn.blue { background-color: #1a73e8; }
+.nav-btn.red { background-color: #d93025; }
+.nav-btn.green { background-color: #188038; }
+.nav-btn.yellow { background-color: #fbbc05; }
+
+/* Hover effects: slightly darker shade and lift */
+.nav-btn:hover {
+  filter: brightness(0.9);
+  transform: translateY(-2px);
+  box-shadow: 0 4px 6px rgba(0,0,0,0.15);
+}
+
+/* Active link effect */
+.nav-btn.active {
+  box-shadow: 0 0 0 3px rgba(0,0,0,0.2);
+}
 
     /* Hero */
     .hero{
@@ -202,7 +232,7 @@
       font-weight:700;
       color:var(--muted);
       font-size:13px;
-      border:1px solid rgba(255,255,255,0.02);
+      border:1px solid rgba(50, 50, 50, 0.04);
     }
 
     /* Projects */
@@ -278,7 +308,10 @@
   <div class="container">
     <header>
       <div class="brand">
-        <div class="logo">PT</div>
+        <div class="logo">
+       <img src="static/images/p.png" alt="Peter Theuri Logo">
+      </div>
+
         <div>
           <div style="font-weight:800">Peter<span style="font-weight:600; color:var(--muted)"> • Theuri</span></div>
           <div class="small-muted">ICT Solutions Expert | Full Stack & System Developer </div>
@@ -288,11 +321,12 @@
       </div>
 
       <nav aria-label="Main navigation">
-        <a href="#projects">Projects</a>
-        <a href="#skills">Skills</a>
-        <a href="#about">About</a>
-        <a href="#contact">Contact</a>
-      </nav>
+       <a href="#projects" class="nav-btn blue">Projects</a>
+       <a href="#skills" class="nav-btn green">Skills</a>
+       <a href="#about" class="nav-btn yellow">About</a>
+      <a href="#contact" class="nav-btn red">Contact</a>
+     </nav>
+
     </header>
 
     <!-- HERO -->
@@ -300,14 +334,13 @@
       <section class="hero">
         <div class="hero-left">
           <h1>Hello I’m <span class="gradient-text">Peter Theuri</span></h1>
-          <p class="subtitle">Proactive and versatile ICT professional with extensive 
-            experience in full-stack system development, enterprise IT support, and digital 
-            solutions engineering. Expert in Python, Flask, SQLAlchemy, REST API development, and modern front-end 
-            technologies, with proven skills in designing and deploying secure, scalable, and high-performance systems. 
-            Adept at database design, systems integration, automation, cloud-based deployments, and optimizing system performance, 
-            delivering innovative and efficient
-             technology solutions tailored to business needs.</p>
-
+          <p class="subtitle">Versatile ICT Professional | Full-Stack Developer & Digital Solutions Expert
+         I’m a proactive and results-driven ICT specialist with expertise across the full technology stack. Skilled in Python, F
+         lask, Django, SQLAlchemy, REST API development, JavaScript, React, Node.js, HTML, CSS, and modern front-end frameworks, I design and 
+          deploy secure, scalable, and high-performance systems. My experience spans database design, systems integration, cloud deployments,
+          automation, AI integration, data visualization, network administration, and enterprise IT support. I excel at optimizing system performance, 
+          building innovative digital solutions, and translating business requirements into reliable, efficient technology, empowering organizations to
+          thrive in the digital age.</p>
           <div class="cta-row">
             <a class="btn" href="#projects">View Projects</a>
             <a class="btn alt" href="#contact">Get in touch</a>
@@ -323,10 +356,15 @@
           <div class="profile-meta">
             <div>
               <div style="font-weight:800">Peter Theuri</div>
-              <div class="small-muted">ICT Specialist • Full-Stack • UI/UX</div>
+              <div class="small-muted">
+               <a href="https://www.linkedin.com/in/peter-wangui-10916b34b" target="_blank" rel="noopener noreferrer"  style="color:var(--accent-1); font-weight:700; text-decoration:none">
+               LinkedIn Profile
+                   </a>
+                </div>
+
             </div>
             <div style="text-align:right">
-              <div class="small-muted">Email</div>
+              <div class="small-muted" style=" font-weight:700">Email</div>
               <a href="mailto:petertheuriwangui@gmail.com" style="color:var(--accent-1); font-weight:700; text-decoration:none">petertheuriwangui@gmail.com</a>
             </div>
           </div>
@@ -335,7 +373,7 @@
 
       <!-- SKILLS -->
       <section id="skills" aria-labelledby="skills-heading">
-        <h2 id="skills-heading">Skills</h2>
+        <h2 id="skills-heading" class="nav-btn green"  >Skills</h2>
         <div class="muted">Technical skills, tools and competencies I use frequently.</div>
 
         <div class="skills-grid" style="margin-top:12px">   
@@ -420,7 +458,7 @@
 
       <!-- PROJECTS -->
       <section id="projects" aria-labelledby="projects-heading">
-        <h2 id="projects-heading">Selected projects</h2>
+        <h2 id="projects-heading" class="nav-btn blue">Selected projects</h2>
         <div class="muted">A few highlights </div>
 
         <div class="projects-grid" style="margin-top:14px">
@@ -480,7 +518,7 @@
       <section id="about" aria-labelledby="about-heading">
         <div class="two-col">
           <div>
-            <h2 id="about-heading">About</h2>
+            <h2 id="about-heading" class="nav-btn yellow">About</h2>
             <div class="muted">Short background and what I bring to projects.</div>
             <div class="card" style="margin-top:12px">
               <p style="margin:0 0 8px">I’m a motivated and versatile Python Developer & ICT Specialist with proven expertise in
@@ -507,7 +545,7 @@ transformation.</p>
             </div>
           </div>
 <aside id="contact" style="position:relative">
-  <h2 style="margin-bottom:6px">Contact</h2>
+  <h2 style="margin-bottom:6px" class="nav-btn red">Contact</h2>
    <div class="muted">call: ☎️ +254793294180</div>
   <div class="muted">Send an Email:</div>
 
@@ -558,7 +596,7 @@ transformation.</p>
         (form.message.value || '')
       );
       // open mail client
-      const mailto = 'mailto:pierypanda@gmail.com'
+      const mailto = 'mailto:petertheuriwangui@gmail.com'
                    + '?subject=' + subject
                    + '&body=' + body;
       window.location.href = mailto;
@@ -630,3 +668,4 @@ lightbox.onclick = (e) => {
 
 </body>
 </html>
+
